@@ -5,7 +5,7 @@ class JJ_NGG_JQuery_Cycle extends WP_Widget
   
   function JJ_NGG_JQuery_Cycle()
   {
-    $widget_ops = array('classname' => 'jj-nexgen-jquery_cycle', 'description' => "Allows you to pick a gallery from the 'NextGen Gallery' plugin to use as a JQuery Cycle Lite plugin.");
+    $widget_ops = array('classname' => 'jj-nexgen-jquery_cycle', 'description' => "Allows you to pick a gallery from the 'NextGen Gallery' plugin to use with 'JQuery Cycle Lite'");
     $this->WP_Widget('jj-nexgen-jquery_cycle', 'JJ NextGEN JQuery Cycle', $widget_ops);
   }
   

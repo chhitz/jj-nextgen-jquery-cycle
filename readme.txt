@@ -4,9 +4,9 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=PSCMP
 Tags: image, picture, photo, widgets, gallery, images, nextgen-gallery, jquery, slideshow, cycle lite, javascript
 Requires at least: 2.8
 Tested up to: 3.0.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 
-Allows you to pick a gallery from the 'NextGen Gallery' plugin to use as a JQuery Cycle Lite plugin.
+Allows you to pick a gallery from the 'NextGen Gallery' plugin to use with 'JQuery Cycle Lite'.
 
 == Description ==
 
@@ -17,6 +17,7 @@ Other plugins for NextGen Gallery and jQuery:
 
 - JJ NextGen JQuery Slider (http://wordpress.org/extend/plugins/jj-nextgen-jquery-slider/)
 - JJ NextGen JQuery Carousel (http://wordpress.org/extend/plugins/jj-nextgen-jquery-carousel/)
+- JJ NextGen Unload (http://wordpress.org/extend/plugins/jj-nextgen-unload/)
 
 Requirements:
 
