@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=PSCMP
 Tags: image, picture, photo, widgets, gallery, images, nextgen-gallery, jquery, slideshow, cycle lite, javascript
 Requires at least: 2.8
 Tested up to: 3.0.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 Allows you to pick a gallery from the 'NextGen Gallery' plugin to use with 'JQuery Cycle Lite'.
 
@@ -27,8 +27,8 @@ NextGen Gallery Integration:
 
 - This plugin uses the original width and height of the image uploaded so make sure the images are the correct dimensions when uploaded.
 - If a width and height are defined under the configuration all images will be resized to those dimensions (Highly recommended).
-- Alt & Title Text Field: Provide a full url here and the image will link to this.
-- Description Field: Will be used as image alt text.
+- Alt & Title Text Field: Provide a full url here and the image will link to this. Only works if alt field starts with either of these; /, http, or ftp.
+- Description Field: Will be used as image alt text. If alt text is present but not a valid url alt text will be used instead for image alt text.
 
 You can specify the following parameters:
 
@@ -81,7 +81,9 @@ Email: wpjjcoder@gmail.com
 
 == Changelog ==
 
-- 1.0: First version.
+- 1.0.2: Better support for NextGen galleries already created. Alt text is now checked to see if its a url. If its not a url alt text will be used for image alt instead of description if it exists.
+- 1.0.1: Tidy up.
+- 1.0.0: First version.
 
 == Contributors ==
 
