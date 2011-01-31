@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=PSCMP
 Tags: image, picture, photo, widgets, gallery, images, nextgen-gallery, jquery, slideshow, cycle lite, javascript
 Requires at least: 2.8
 Tested up to: 3.0.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 
 Allows you to pick a gallery from the 'NextGen Gallery' plugin to use with 'JQuery Cycle Lite'.
 
@@ -81,6 +81,7 @@ Email: wpjjcoder@gmail.com
 
 == Changelog ==
 
+- 1.0.3: Widget header is now a h2 tag. Widget output fix.
 - 1.0.2: Better support for NextGen galleries already created. Alt text is now checked to see if its a url. If its not a url alt text will be used for image alt instead of description if it exists.
 - 1.0.1: Tidy up.
 - 1.0.0: First version.

@@ -83,7 +83,7 @@ class JJ_NGG_JQuery_Cycle extends WP_Widget
     {         
       if($title != '')
       {
-        $output .= "\n<h3>" . $title . "</h3>";
+        $output .= "\n<h2>" . $title . "</h2>";
       }                 
       $center_style_outer = '';
       $center_style_inner = '';
@@ -192,7 +192,7 @@ class JJ_NGG_JQuery_Cycle extends WP_Widget
  
     if($shortcode != '1')
     {
-      echo "<ul class=\"ul_jj_cycle\"><li class=\"li_jj_cycle\">" . $output . "</ul></li>";
+      echo "\n<li class=\"li_jj_cycle_container\">\n  <ul class=\"ul_jj_cycle\">\n    <li class=\"li_jj_cycle\">" . $output . "\n    </li>\n  </ul>\n</li>";
     }
     else
     {
