@@ -82,9 +82,17 @@ class JJ_NGG_JQuery_Cycle extends WP_Widget
     if($p_size > 0) 
     {         
       if($title != '')
-      {
-        $output .= "\n<h2>" . $title . "</h2>";
-      }                 
+      {      
+        if($shortcode != '1')
+        {      
+          $output .= "\n" . $before_title . $title . $after_title;
+        }
+        else
+        {
+          $output .= "\n<h3>" . $title . "</h3>";
+        }
+      }
+                      
       $center_style_outer = '';
       $center_style_inner = '';
       if($center == '1' && $width != '')
@@ -153,7 +161,7 @@ class JJ_NGG_JQuery_Cycle extends WP_Widget
           $width_d = " width=\"" . $width . "\"";
           $height_d = " height=\"" . $height . "\"";  
         }     
-        $output .= "<img src=\"" . $image->imageURL . "\" " . $image_description . $width_d . $height_d . "/>";
+        $output .= "<img src=\"" . $image->imageURL . "\" " . $image_description . $width_d . $height_d . " border=\"0\" />";
         
         if($use_url != '')
         {
@@ -164,7 +172,7 @@ class JJ_NGG_JQuery_Cycle extends WP_Widget
       $output .= "\n</div>";
     }    
     
-    // JCarousel arguments
+    // Cycle Lite arguments
     $javascript_args = array();
     
     if($timeout != "") { $javascript_args[] = "timeout: " . $timeout; }
@@ -191,8 +199,8 @@ class JJ_NGG_JQuery_Cycle extends WP_Widget
     $output .= "\n</script>\n";
  
     if($shortcode != '1')
-    {
-      echo "\n<li class=\"li_jj_cycle_container\">\n  <ul class=\"ul_jj_cycle\">\n    <li class=\"li_jj_cycle\">" . $output . "\n    </li>\n  </ul>\n</li>";
+    {      
+      echo $before_widget . "\n<ul class=\"ul_jj_cycle\">\n    <li class=\"li_jj_cycle\">" . $output . "\n    </li>\n  </ul>\n" . $after_widget;
     }
     else
     {

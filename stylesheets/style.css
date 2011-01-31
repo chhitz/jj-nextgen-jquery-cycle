@@ -1,0 +1,9 @@
+ul.ul_jj_cycle {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul.ul_jj_cycle li.li_jj_cycle {
+  margin: 0;
+  padding: 0;  
+}

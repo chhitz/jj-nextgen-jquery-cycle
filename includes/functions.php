@@ -14,6 +14,13 @@ function WPJJNGGJ_CYCLE_enqueue_scripts()
     wp_enqueue_script( 'jquery-shuffle', WPJJNGGJ_CYCLE_plugin_url( 'script/jquery.jj_ngg_shuffle.js' ), array('jquery'), '', false );
   }
 }
+function WPJJNGGJ_CYCLE_enqueue_styles() 
+{
+  if( !is_admin() ) 
+  {  
+    wp_enqueue_style( 'jquery-plugins-cycle-style', WPJJNGGJ_CYCLE_plugin_url( 'stylesheets/style.css' ), array(), '', 'all' );
+  }
+}
 
 function WPJJNGGJ_CYCLE_use_default($instance, $key)
 {
