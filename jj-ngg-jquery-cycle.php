@@ -3,7 +3,7 @@
 Plugin Name: JJ NextGen JQuery Cycle
 Description: Allows you to pick a gallery from the 'NextGen Gallery' plugin to use with 'JQuery Cycle Lite'.
 Author: JJ Coder
-Version: 1.0.4
+Version: 1.0.5
 */
 
 if ( ! defined( 'WPJJNGGJ_CYCLE_PLUGIN_BASENAME' ) )

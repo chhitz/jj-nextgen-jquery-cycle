@@ -35,7 +35,7 @@ class JJ_NGG_JQuery_Cycle extends WP_Widget
 
     // SQL defaults
     $sql_order = '';
-    $sql_where = ' ';
+    $sql_where = ' WHERE exclude = 0';
     $sql_limit = '';
     
     // Set SQL order
@@ -60,9 +60,9 @@ class JJ_NGG_JQuery_Cycle extends WP_Widget
       $sql_order = 'galleryid ASC';
     }
 
-    if($gallery != "")
+    if($gallery != '')
     {
-      $sql_where = " WHERE galleryid = " . $gallery;
+      $sql_where .= ' AND galleryid = ' . $gallery;
     }
     
     // Set limit defaults
