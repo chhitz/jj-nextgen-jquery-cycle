@@ -12,7 +12,6 @@ class JJ_NGG_JQuery_Cycle extends WP_Widget
   function widget($args, $instance)
   {
     global $wpdb;
-    extract($args);
 
     // Set params
     $title = apply_filters('widget_title', $instance['title']);
