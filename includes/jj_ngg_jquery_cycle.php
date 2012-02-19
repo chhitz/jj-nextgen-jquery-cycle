@@ -21,7 +21,8 @@ class JJ_NGG_JQuery_Cycle extends WP_Widget
     $limit = $this->get_val_numeric($instance, 'max_pictures');
     $gallery = $this->get_val_numeric($instance, 'gallery');
     $width = $this->get_val_numeric($instance, 'width');
-    $height = $this->get_val_numeric($instance, 'height'); 
+    $height = $this->get_val_numeric($instance, 'height');
+    $resize = $this->get_val($instance, 'resize');
     $center = $this->get_val($instance, 'center');
     $shortcode = $this->get_val($instance, 'shortcode');  
     
@@ -161,8 +162,21 @@ class JJ_NGG_JQuery_Cycle extends WP_Widget
           $width_d = " width=\"" . $width . "\"";
           $height_d = " height=\"" . $height . "\"";  
         }     
-        $output .= "<img src=\"" . $image->imageURL . "\" " . $image_description . $width_d . $height_d . " border=\"0\" />";
-        
+        $output .= "<img src=\"";
+ 	
+	if($resize)
+	{
+	  $output .= plugins_url('includes/timthumb.php' , dirname(__FILE__)) . "?zc=1&src=" . $image->path . "/" . $image->filename;
+ 	  if ($height) $output .= "&h=" . $height;
+ 	  if ($width) $output .= "&w=" . $width;
+ 	}
+ 	else
+ 	{
+ 	  $output .= $image->imageURL;
+ 	}
+	
+        $output .= "\" " . $image_description . $width_d . $height_d . " border=\"0\" />";
+
         if($use_url != '')
         {
           $output .= "</a>";
@@ -247,6 +261,7 @@ class JJ_NGG_JQuery_Cycle extends WP_Widget
       'max_pictures' => '',
       'width' => '200',
       'height' => '200',
+      'resize' => '',
       'center' => '',      
       
       // cycle lite settings
@@ -322,7 +337,11 @@ class JJ_NGG_JQuery_Cycle extends WP_Widget
   <p>
     <label for="<?php echo $this->get_field_id('height'); ?>"><strong>Image height:</strong></label><br />
     <input type="text" id="<?php echo $this->get_field_id('height'); ?>" name="<?php echo $this->get_field_name('height'); ?>" value="<?php echo $instance['height']; ?>" size="3" />
-  </p>    
+  </p>
+  <p>
+    <input type="checkbox" id="<?php echo $this->get_field_id('resize'); ?>" style="vertical-align: middle;" name="<?php echo $this->get_field_name('resize'); ?>" value="1"<?php if($instance['resize'] == '1') { echo " checked=\"checked\""; } ?> />
+    <label for="<?php echo $this->get_field_id('resize'); ?>" style="vertical-align: middle;"><strong>Resize images</strong></label><br />
+  </p>
   <p>
     <input type="checkbox" id="<?php echo $this->get_field_id('center'); ?>" style="vertical-align: middle;" name="<?php echo $this->get_field_name('center'); ?>" value="1"<?php if($instance['center'] == '1') { echo " checked=\"checked\""; } ?> />
     <label for="<?php echo $this->get_field_id('center'); ?>" style="vertical-align: middle;"><strong>Center content</strong></label><br />
